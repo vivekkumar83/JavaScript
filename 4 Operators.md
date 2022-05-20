@@ -56,5 +56,50 @@ alert(age); // NaN, conversion failed
 * true and false -----------> 	1 and 0
 
 
+## Comparisons
+### String comparison
+* string is greater than another, JavaScript uses the so-called “dictionary” or “lexicographical” order.
+* strings are compared letter-by-letter.
+``` javascript
+alert( 'Z' > 'A' ); // true
+alert( 'Glow' > 'Glee' ); // true
+alert( 'Bee' > 'Be' ); // true
+```
+### Comparison of different types
+* When comparing values of different types, JavaScript converts the values to numbers.
+``` javascript
+alert( '2' > 1 ); // true, string '2' becomes a number 2
+alert( '01' == 1 ); // true, string '01' becomes a number 1
+```
 
-* 
+
+``` javascript
+alert( true == 1 ); // true
+alert( false == 0 ); // true
+```
+
+
+
+``` javascript
+let a = 0;
+alert( Boolean(a) ); // false
+
+let b = "0";
+alert( Boolean(b) ); // true
+```
+
+
+### Strict equality
+* A strict equality operator === checks the equality without type conversion.
+* it checks data types also
+* These values are different, because each of them is a different type.
+``` javascript
+alert( null === undefined ); // false
+```
+
+``` javascript
+alert( null == undefined ); // true
+```
+
+
+
