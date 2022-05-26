@@ -88,5 +88,26 @@ x(function y() {
 // timer
 ```
 
+## IIFE - IMMEDIATELY INVOKED FUNCTION EXPRESSION:
+* A JavaScript immediately invoked function expression is a function defined as an expression and executed immediately after creation. 
+* When you define a function, the JavaScript engine adds the function to the global object. 
+* if you declare a variable outside of a function using the var keyword, the JavaScript engine also adds the variable to the global object
+* If you have many global variables and functions, the JavaScript engine will only release the memory allocated for them until the global object loses its scopes.
+* One way to prevent the functions and variables from polluting the global object is to use immediately invoked function expressions.
+``` javascript
+(function(){
+    //...
+})();
+```
+* Can also be referred to as a Self-Executing Anonymous Function.
+``` javascript
+(function() {
+    var counter = 0;
 
+    function add(a, b) {
+        return a + b;
+    }
 
+    console.log(add(10,20)); // 30
+}());
+```
