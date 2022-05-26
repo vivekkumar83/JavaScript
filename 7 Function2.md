@@ -20,9 +20,9 @@ b();            // b called
 
 ## Anonymous Function
 ``` javascript
-function () {
-	
-}
+(function () {
+   //...
+});
 ```
 * A function without a name is Anonymous Function,& does not have their own identity
 * it is used when the functions are used as values , it is not used as function statement
