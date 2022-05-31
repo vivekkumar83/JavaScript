@@ -1,3 +1,4 @@
+# STRING:
 * JavaScript strings are primitive values.
 * strings are immutable. It means that if you modify a string, you will always get a new string. The original string doesn’t change.
 * There is no separate type for a single character.
