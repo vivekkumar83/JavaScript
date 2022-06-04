@@ -43,4 +43,80 @@ let address = {
 address['building no'];
 };
 ```
-*  
+## Modifying the value of a property:
+* To change the value of a property, you use the assignment operator (=)
+
+``` javascript
+let person = {
+    firstName: 'John',
+    lastName: 'Doe'
+};
+
+person.firstName = 'Jane';
+
+console.log(person); 
+```
+
+``` javascript
+Output:
+
+{ firstName: 'Jane', lastName: 'Doe' }
+```
+
+## Adding a new property to an object
+``` javascript
+let person = {
+  firstName: 'John',
+  lastName: 'Doe'
+};
+
+person.age = 24;
+
+console.log(person); 
+```
+``` javascript
+Output:
+
+{ firstName: 'John', lastName: 'Doe', age: 24 }
+```
+
+## Deleting a property of an object
+``` javascript
+let person = {
+  firstName: 'John',
+  lastName: 'Doe'
+};
+
+person.age = 24;
+
+console.log(person); 
+
+delete person.age;
+console.log(person); 
+```
+``` javascript
+Output:
+
+{ firstName: 'John', lastName: 'Doe', age: 24 }
+{ firstName: 'John', lastName: 'Doe' }
+```
+
+## Checking if a property exists
+* The in operator returns true if the propertyName exists in the objectName.
+``` javascript
+let employee = {
+    firstName: 'Peter',
+    lastName: 'Doe',
+    employeeId: 1
+};
+
+console.log('ssn' in employee);
+console.log('employeeId' in employee);
+```
+``` javascript
+Output:
+
+false
+true
+```
+
