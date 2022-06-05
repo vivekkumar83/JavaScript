@@ -76,3 +76,54 @@ console.log(member);
 * Second, assign the person variable to the member variable. In the memory, both variables reference the same object
 * change the age property of the object via the member variable
 * Since both person and member variables reference the same object, changing the object via the member variable is also reflected in the person variable.
+
+* In JavaScript, all function arguments are always passed by value
+``` javascript
+function square(x) {
+    x = x * x;
+    return x;
+}
+
+let y = 10;
+let result = square(y);
+
+console.log(result); // 100 
+console.log(y); // 10 -- no change
+```
+* reference values are also passed by values
+``` javascript
+let person = {
+  name: 'John',
+  age: 25,
+};
+
+function increaseAge(obj) {
+  obj.age += 1;
+}
+
+console.log(person); // { name: 'John', age: 25 }
+
+increaseAge(person);
+
+console.log(person); // { name: 'John', age: 26 }
+```
+* It seems that JavaScript passes an object by reference because the change to the object is reflected outside the function. However, this is not the case.
+* In fact, when passing an object to a function, you are passing the reference of that object, not the actual object. Therefore, the function can modify the properties of the object via its reference.
+* However, you cannot change the reference passed into the function.
+``` javascript
+let person = {
+  name: 'John',
+  age: 25,
+};
+
+function increaseAge(obj) {
+  obj.age += 1;
+
+  // reference another object
+  obj = { name: 'Jane', age: 22 };
+}
+
+increaseAge(person);
+
+console.log(person); // { name: 'John', age: 26 }
+```
