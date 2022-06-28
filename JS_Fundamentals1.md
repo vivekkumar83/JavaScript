@@ -241,3 +241,48 @@ const result = null || undefined ?? 'OK'; // SyntaxError
 const result = (null || undefined) ?? 'OK'; 
 console.log(result); // 'OK'
 ```
+
+## Exponentiation Operator:
+* To raise a number to the power of an exponent
+``` javascript
+let result = Math.pow(2,2);
+console.log(result); // 4
+
+result = Math.pow(2,3);
+console.log(result); // 8
+```
+* The operator ** raises the x to the power of an exponent n
+``` javascript
+let result = 2 ** 2;
+console.log(result); // 4
+
+result = 2 ** 3;
+console.log(result); // 8
+```
+
+## Conditional branching:
+``` javascript
+let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+
+if (year < 2015) {
+  alert( 'Too early...' );
+} else if (year > 2015) {
+  alert( 'Too late' );
+} else {
+  alert( 'Exactly!' );
+}
+```
+* all values are truthy except false, 0, -0, 0n, "", null, undefined, and NaN.
+
+## Ternary Operator:
+* the syntax of the ternary operator
+* condition ? expressionIfTrue : expressionIfFalse;
+``` javascript
+let age = 18;
+let message;
+
+message = age >= 16 ? 'You can drive.' : 'You cannot drive.';
+
+console.log(message);
+```
+
