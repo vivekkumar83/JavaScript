@@ -2,9 +2,11 @@
 * JavaScript strings are primitive values.
 * strings are immutable. It means that if you modify a string, you will always get a new string. The original string doesn’t change.
 * There is no separate type for a single character.
+* Literal strings are delimited by single quotes ('), double quotes ("), or backticks (`).
 ``` javascript
 let str = 'Hi';
 let greeting = "Hello";
+let greeting = `Hello`;
 ```
 
 ### Accessing characters
@@ -33,9 +35,16 @@ console.log(str[str.length -1]); // "o"
 ``` javascript
 let str = 'Hi';
 
+str[0] = 'h'; // error
+alert( str[0] ); // doesn't work
+```
+``` javascript
+let str = 'Hi';
+
 str = 'h' + str[1]; // replace the string
 
 alert( str ); // hi
+
 ```
 
 ### function in javascript
@@ -70,6 +79,11 @@ age = Number(age);
 console.log(typeof age); // number
 ```
 
+``` javascript
+let status = false;
+let str = status.toString(); // "false"
+```
+
 ### string concatenation
 ``` javascript
 let string1 = "17";
@@ -80,14 +94,6 @@ console.log(typeof newString);//number
 ```
 
 ``` javascript
-let string1 = "17";
-let string2 = "10";
-
-let newString = +string1 + +string2;
-console.log(typeof newString);//number
-```
-
-``` javascript
 let age = 22;
 let firstName = "harshit"
 
@@ -98,16 +104,6 @@ let aboutMe = `my name is ${firstName} and my age is ${age}`
 console.log(aboutMe);
 ```
 
-``` javascript
-let age = 22;
-let firstName = "harshit"
-
-//"my name is harshit and my age is 22 "
-let aboutMe = "my name is " + firstName + " and my age is " + age; 
-console.log(aboutMe);
-let aboutMe = `my name is ${firstName} and my age is ${age}`
-console.log(aboutMe);
-```
 * evalutes data from left to right
 
 ``` javascript
