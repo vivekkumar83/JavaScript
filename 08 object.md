@@ -1,5 +1,12 @@
 # Object:
 * an object is an unordered collection of key-value pairs. Each key-value pair is called a property.
+* creating object using curly brackets
+* let obj = {}; empty object
+* let obj = {name = "mohit", age = 24};
+* using new operator 
+* let obj = new object();
+* let obj = new object ({key1: value1, key2: value2})
+
 ``` javascript
 let person = {
     firstName: 'John',
