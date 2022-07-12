@@ -2,86 +2,66 @@
 * In this module we will cover some basic topics of javascript.
 
 
-## Variables:
+# Variables:
 * In the javascript we are using three keyword for declare variable var, let, const.
-
+* var & let used
+* for constant const used
+* loosely typed or dynamic language
 ```javascript
-var firstName = "vivek";
-console.log(firstName); // vivek
+var myNum; // declare
+myNum = 7; // assign
+console.log(myNum);
+myNum = 8; // update
+console.log(myNum);
+
+var newNum = myNum; // copy in another variable
+console.log(newNum);
+
+newNum = 9;
+console.log(newNum);
+console.log(myNum);
+
+let firstName = "vivek";
+firstName = "kumar";
+console.log(firstName);
+
+const pi  = 3.14; // cant update
 ```
 
-* upadte var variable without using var keyword
+# Data types
+### 7 primitive datatypes
+* null
+* undefined
+* boolean
+* number
+* string
+* symbol 
+* bigint 
+### and a complex data type
+* Object
+
+### Null
+* there is an absence of value
+
+### Undefined
+* when a variable is declared but not initialized, it is assigned the value of undefined.
 ```javascript
-firstName =  "kumar";
-console.log(firstName); // kumar
+let counter;
+console.log(counter);        // undefined
+console.log(typeof counter); // undefined
 ```
-
-* let firstName = "ajay"; we can't use firstName here   
+### NaN
+* Not a Number
+* special numeric value that indicates an invalid number
 ```javascript
-let name = "harshit";
-name = "Mohit";
-console.log(name); // Mohit
-``` 
-
-```javascript
-const pi = 3.14;
-console.log(pi); // 3.14
-```  
-
-
-## Data types
-* There are eight basic data types in JavaScript.
-* JavaScript, are called “dynamically typed”.
-
-### Number
-* The number type represents both integer and floating point numbers.
-* Besides regular numbers, there are so-called “special numeric values” which also belong to this data type: Infinity, -Infinity and NaN.
-* NaN represents a computational error. It is a result of an incorrect or an undefined mathematical operation, for instance
-```javascript
-console.log( "not a number" / 2 ); // NaN, such division is erroneous
+console.log('a'/2); // NaN;
 ```
-### BigInt
-* In JavaScript, the “number” type cannot represent integer values larger than (253-1) (that’s 9007199254740991), or less than -(253-1) for negatives
-* BigInt type was recently added to the language to represent integers of arbitrary length.
-* A BigInt value is created by appending n to the end of an integer
+### Bigint
+* The bigint type represents the whole numbers that are larger than 253 – 1. 
 ```javascript
-console.log( "not a number" / 2 ); // NaN, such division is erroneous
+let pageView = 9007199254740991n;
+console.log(typeof(pageView)); // 'bigint'
 ```
-### String
-* A string in JavaScript must be surrounded by quotes.
-```javascript
-let str = "Hello";
-let str2 = 'Single quotes are ok too';
-let phrase = `can embed another ${str}`;
-```
-
-### Boolean (logical type)
-* The boolean type has only two values: true and false.
-```javascript
-let isGreater = 4 > 1;
-console.log( isGreater ); // true (the comparison result is "yes")
-```
-
-### The “null” value
-* It’s just a special value which represents “nothing”, “empty” or “value unknown”.
-```javascript
-let age = null;
-```
-* The code above states that age is unknown.
-
-
-### The “undefined” value
-* The meaning of undefined is “value is not assigned”.
-* If a variable is declared, but not assigned, then its value is undefined
-```javascript
-let age;
-console.log(age); // shows "undefined"
-```
-
-### Objects and Symbols
-* All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever). 
-  In contrast, objects are used to store collections of data and more complex entities so non - primitive
-* The symbol type is used to create unique identifiers for objects. 
 
 
 ### The typeof operator
@@ -140,40 +120,101 @@ let isBoss = confirm("Are you the boss?");
 
 alert( isBoss ); // true if OK is pressed
 ```
+# Strings:
+### create:
+```javascript
+let str ="srita";
+console.log(str);
 
+let str1 = 'sarita';
+console.log(str1);
 
-## Type Conversions:
-* for converting the type of value from one type to another type.
-* alert automatically converts any value to a string to show it. 
-* Mathematical operations convert values to numbers.
+let str2 = `sarita`;
+console.log(str2); 
+```
+### Accessing characters:
+* indexing
+* function use charAt()
+```javascript
+let str ="srita";
+console.log(str[0]); //s
+console.log(str.charAt(0)); //s
+```
+### Function in string:
+```javascript
+str = str.toUpperCase(); 
+console.log(str);    // SARITA
+str = str.toLowerCase();
+console.log(str);   // sarita
+str = str.slice(1,3);
+console.log(str);   // ar
+```
+### String length:
+```javascript
+let newName = "vivek";
+console.log(newName.length);
+//  last character of the string,use the length - 1 index
+console.log(newName.length);
+console.log(newName[newName.length - 1]);
+console.log(newName[newName.length - 2]);
+```
+### Strings are immutable:
+* cannot be modified once created
+* create a new string from an existing string
+```javascript
+let str = 'Hi';
 
-### String conversion 
-* String conversion happens when we need the string form of a value.
-* String(value) function to convert a value to a string
+str = 'h' + str[1]; // replace the string
+
+alert( str ); // hi
+```
+### Concatenating strings:
+```javascript
+let firstName = "vivek";
+let lastName = "kumar";
+let fullName = firstName + " " + lastName;
+console.log(fullName);
+```
+### Conversion:
+* convert number to string
+```javascript
+let age = 22;
+age = age + "";
+console.log(typeof(age)); // string
+age = String(age);
+console.log(typeof(age)); // string
+```
+* convert string to number
+```javascript
+let age1 = "22";
+age1 = +age1;
+console.log(typeof(age1)); // number
+age1 = Number(age1);
+console.log(typeof(age1)); // number
+
+let num = 24;
+num = num.toString(num);
+console.log(typeof(num)); // string
+```
+* evalutes data from left to right
+
 ``` javascript
-let value = true;
-alert(typeof value); // boolean
+let temp = 5+4+"mohit";
+console.log(temp); // 9mohit
+let temp = "mohit"+5+4
+console.log(temp); // mohit54
+```
+``` javascript
+let age = 22;
+let firstName = "harshit"
 
-value = String(value); // now value is a string "true"
-alert(typeof value); // string
+//"my name is harshit and my age is 22 "
+let aboutMe = "my name is " + firstName + " and my age is " + age; 
+console.log(aboutMe);
+let aboutMe = `my name is ${firstName} and my age is ${age}`
+console.log(aboutMe);
 ```
 
-### Numeric Conversion
-* Numeric conversion happens in mathematical functions and expressions automatically.
-``` javascript
-alert( "6" / "2" ); // 3, strings are converted to numbers
-```
-* Number(value) function to explicitly convert a value to a number
-``` javascript
-alert( "6" / "2" ); // 3, strings are converted to numbers
-```
-
-* If the string is not a valid number, the result of such a conversion is NaN
-``` javascript
-let age = Number("an arbitrary string instead of a number");
-
-alert(age); // NaN, conversion failed
-``` 
 * Numeric conversion rules
 * undefined  -------------> 	NaN
 * null  -------------->  	0
