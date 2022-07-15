@@ -327,3 +327,8 @@ message = age >= 16 ? 'You can drive.' : 'You cannot drive.';
 console.log(message);
 ```
 
+# Arrays:
+* Ordered collection of item
+* Store multiple type of values
+* index based
+* reference type (i.e Object)
