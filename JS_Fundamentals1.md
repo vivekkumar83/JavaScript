@@ -318,7 +318,7 @@ if (year < 2015) {
 ## Ternary Operator:
 * the syntax of the ternary operator
 * condition ? expressionIfTrue : expressionIfFalse;
-``` javascript
+```javascript
 let age = 18;
 let message;
 
@@ -332,3 +332,48 @@ console.log(message);
 * Store multiple type of values
 * index based
 * reference type (i.e Object)
+* the size of an array is dynamic and auto-growing
+```javascript
+let temp = [1,1.2,"vivek",null,undefined];
+console.log(temp);// [1, 1.2, 'vivek', null, undefined]
+```
+### Creating an Arrays:
+* two ways to create an array
+#### Array constructor
+```javascript
+let arrayName = new Array(); // create an empty array
+let arrayName = new Array(10); // create an array of size 10
+let arrayName = new Array(1,2,3,"vivek",null); // create an array with values
+```
+#### Array literal notation
+```javascript
+let temp = [] // empty array // 
+let temp = [1,1.2,"vivek",null,undefined]; // [1, 1.2, 'vivek', null, undefined]
+```
+### Accessing array elements:
+```javascript
+let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
+
+console.log(mountains[0]); // 'Everest'
+console.log(mountains[1]); // 'Fuji'
+console.log(mountains[2]); // 'Nanga Parbat'
+```
+* To change the value of an element
+```javascript
+let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
+console.log(mountains); // ['Everest', 'Fuji', 'Nanga Parbat']
+mountains[1] = 'k2';
+console.log(mountains); // ['Everest', 'k2', 'Nanga Parbat']
+```
+```javascript
+let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
+console.log(mountains.length); // 3
+mountains[6] = "himalaya";
+console.log(mountains); // ['Everest', 'k2', 'Nanga Parbat', undefined, undefined, undefined, 'himalaya']
+console.log(mountains.length); // 7
+console.log(mountains[2]); // Nanga Parbat
+console.log(mountains[3]); // undefined
+console.log(mountains[4]); // undefined
+```
+* now size becomes index + 1 i.e 7 & remaing index filled with undefined values
+* access the element outside of it's range show error
