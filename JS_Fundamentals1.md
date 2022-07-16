@@ -377,3 +377,58 @@ console.log(mountains[4]); // undefined
 ```
 * now size becomes index + 1 i.e 7 & remaing index filled with undefined values
 * access the element outside of it's range show error
+
+### Functions:
+#### length
+* to know the size or number of element in array
+```javascript
+let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
+console.log(mountains.length); // 3
+```
+#### push() method
+* add one or more element to the end of an array and return the new length of the array
+```javascript
+let userName = ["vivek", "Ajay"];
+console.log(userName);  // ['vivek', 'Ajay']
+console.log(userName.push("vijay")); // 3
+console.log(userName); // ['vivek', 'Ajay', 'vijay']
+```
+#### pop() method
+* used to remove the last element from the array & return that element
+* decrese the length
+```javascript
+let userName = ["vivek", "Ajay", "vijay"];
+console.log(userName); // (3) ['vivek', 'Ajay', 'vijay']
+console.log(userName.pop()); // vijay
+console.log(userName); // (2) ['vivek', 'Ajay']
+```
+#### shift() method
+* used to remove the first element from the array & return that element
+```javascript
+let userName = ["vivek", "Ajay", "vijay"];
+console.log(userName); // (3) ['vivek', 'Ajay', 'vijay']
+console.log(userName.shift()); // vivek
+console.log(userName); // (2) ['Ajay', 'vijay']
+```
+#### unshift() method
+* add one element or more element to the begining of the array and return the new length
+```javascript
+let userName = ["vivek", "Ajay", "vijay"];
+console.log(userName); // (3) ['vivek', 'Ajay', 'vijay']
+console.log(userName.unshift("kumar")); // 4
+console.log(userName); // (4) ['kumar', 'vivek', 'Ajay', 'vijay']
+```
+#### indexOf()
+* used to return the first index at which the given element is found in the array
+```javascript
+let userName = ["vivek", "Ajay", "vijay", "Ajay"];
+let id = userName.indexOf("Ajay");
+console.log(id); // 1
+```
+### Array.isArray()
+*  To check if a value is an array
+```javascript
+let userName = ["vivek", "Ajay", "vijay", "Ajay"];
+console.log(Array.isArray(userName)); // true
+```
+   
