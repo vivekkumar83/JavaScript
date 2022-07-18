@@ -511,3 +511,54 @@ const fruits = ["apple", "mango"]; // 0x11
 fruits.push("banana");
 console.log(fruits); // (3) ['apple', 'mango', 'banana']
 ```
+#### for of loop in array
+```javascript
+const fruits = ["apple", "mango", "grapes", "fruit4", "fruit5"];
+const fruits2 = [];
+for(let fruit of fruits){
+    fruits2.push(fruit.toUpperCase());
+}
+console.log(fruits2); // (5) ['APPLE', 'MANGO', 'GRAPES', 'FRUIT4', 'FRUIT5']
+```
+#### for in loop in array
+```javascript
+const fruits = ["apple", "mango", "grapes", "fruit4", "fruit5"];
+const fruits2 = [];
+
+for(let index in fruits){
+    fruits2.push(fruits[index].toUpperCase());
+}
+console.log(fruits2); // (5) ['APPLE', 'MANGO', 'GRAPES', 'FRUIT4', 'FRUIT5']
+```
+### Array destructuring
+* for storing the different value of array in different variable
+```javascript
+const myArray = ["value1", "value2", "value3","value4"];
+let myvar1 = myArray[0];
+let myvar2 = myArray[1];
+console.log("value of myvar1", myvar1); // value of myvar1 value1
+console.log("value of myvar2", myvar2); // value of myvar2 value2
+```
+* using destructuring
+```javascript
+const myArray = ["value1", "value2", "value3","value4"];
+
+let [myvar1, myvar2] = myArray;
+console.log("value of myvar1", myvar1); // value of myvar1 value1
+console.log("value of myvar2", myvar2); // value of myvar2 value2
+```
+```javascript
+const myArray = ["value1", "value2", "value3","value4"];
+
+let [myvar1, , myvar3] = myArray; // commas skip the value
+console.log("value of myvar1", myvar1); // value of myvar1 value1
+console.log("value of myvar3", myvar3); // value of myvar3 value3
+```
+```javascript
+const myArray = ["value1", "value2", "value3","value4"];
+
+let [myvar1, myvar2, ...myNewArray] = myArray;
+console.log("value of myvar1", myvar1); // value of myvar1 value1
+console.log("value of myvar2", myvar2); // value of myvar2 value2
+console.log(myNewArray);  // (2) ['value3', 'value4']
+```
