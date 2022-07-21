@@ -1055,3 +1055,56 @@ let sum = (a, b) => {  // the curly brace opens a multiline function
 
 alert( sum(1, 2) ); // 3
 ```
+
+### passing array to function
+```javascript
+function findTarget(array, target){
+    for(let i = 0; i<array.length; i++){
+        if(array[i]===target){
+            return i;
+        }
+    }
+    return -1;
+}
+const myArray = [1,3,8,90]
+const ans = findTarget(myArray, 8);
+console.log(ans); // 2
+```
+### function inside function:
+```javascript
+function app(){
+    const myFunc = () =>{
+        console.log("hello from myFunc")
+    }
+    
+    const addTwo = (num1, num2) =>{
+        return num1 + num2;
+    }
+
+    const mul = (num1, num2) => num1* num2;
+
+    console.log("inside app");
+    myFunc();
+    console.log(addTwo(2,3));
+    console.log(mul(2,3));
+}
+app();
+// inside app
+// hello from myFunc
+// 5
+// 6
+```
+### rest parameters 
+```javascript
+function findTarget(array, target){
+    for(let i = 0; i<array.length; i++){
+        if(array[i]===target){
+            return i;
+        }
+    }
+    return -1;
+}
+const myArray = [1,3,8,90]
+const ans = findTarget(myArray, 8);
+console.log(ans); // 2
+```
