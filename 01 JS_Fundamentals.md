@@ -1,4 +1,4 @@
-# JavaScript Fundamentals 1:
+# JavaScript Fundamentals:
 * In this module we will cover some basic topics of javascript.
 
 
