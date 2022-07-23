@@ -113,7 +113,7 @@ x(function y() {
 })();
 ```
 * Can also be referred to as a Self-Executing Anonymous Function.
-``` javascript
+```javascript
 (function() {
     var counter = 0;
 
@@ -123,4 +123,31 @@ x(function y() {
 
     console.log(add(10,20)); // 30
 }());
+```
+### Function pass-by-value or pass-by-reference
+* In JavaScript, all function arguments are always passed by value. 
+* Function arguments are local variables in JavaScript.
+
+### Closures:
+* A function binds together with it's lexical enviroment
+* function along with it's lexical scope forms a closures
+```javascript
+function x(){
+    var b =7;
+    function y(){
+        console.log(b);
+    }
+    return y;
+}
+var z = x();
+console.log(z);
+z();
+/*
+ƒ y(){
+        console.log(b);
+    }
+
+
+7
+*/
 ```
