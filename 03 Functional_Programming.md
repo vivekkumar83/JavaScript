@@ -151,3 +151,120 @@ z();
 7
 */
 ```
+```javascript
+function x(){
+    var b =7;
+    return function y(){
+        console.log(b);
+    }
+    y;
+}
+var z = x();
+console.log(z);
+z();
+/*
+ƒ y(){
+        console.log(b);
+    }
+
+
+7
+*/
+```
+
+```javascript
+function z() {
+    var b =900;
+    function x() {
+        var a =7;
+        function y() {
+            console.log(a,b); // 7, 900
+        }
+        y();
+    }
+    x();
+}
+z();
+
+/*
+closure (x)
+a:7
+
+closure (z)
+b:900
+*/
+
+```
+* it remember the reference of variable a & b
+```javascript
+function x() {
+    var i =1;
+    setTimeout(function (){
+        console.log(i);
+    },3000);
+    console.log("vivek");
+}
+x();
+/* output:
+vivek
+1
+*/
+```
+* in the above code, there is call back function forms closure with reference of variable i
+* when the timer has finished call back function executed & print the value of reference of i
+### High Order Function:
+* Afunction which takes another function as an argument or return a function from it
+```javascript
+function x() {
+    console.log("namaste")
+}
+
+function y(x) {
+    x();
+}
+```
+* map,filter & reduce are high order functionin js
+### Map:
+* it is used to transform the array
+* it returns a new array
+```javascript
+const arr = [1,2,3,4,5];
+
+function binary(x) {
+    return x.toString(2)
+}
+
+const output = arr.map(binary);
+
+console.log(output); // (5) ['1', '10', '11', '100', '101']
+```
+
+```javascript
+const arr = [1,2,3,4,5];
+
+
+const output = arr.map(function binary(x) {
+    return x.toString(2)
+});
+
+console.log(output); // (5) ['1', '10', '11', '100', '101']
+```
+
+
+```javascript
+const arr = [1,2,3,4,5];
+
+
+const output = arr.map((x) =>x.toString(2));
+
+console.log(output); // (5) ['1', '10', '11', '100', '101']
+```
+### Filter 
+```javascript
+const arr = [1,2,3,4,5];
+
+
+const output = arr.filter((x) => x >2);
+
+console.log(output); // (3) [3, 4, 5]
+```
