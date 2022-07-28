@@ -177,7 +177,7 @@ let c = 30;      // c = 10
 * Global --> a : undefined (hoisted in global)
 
 * let & const can not access outside of the block
-## Block scope & Shadowing:
+
 ``` javascript
 var a = 100;  // global
 let b = 50;   // script
