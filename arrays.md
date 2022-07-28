@@ -234,3 +234,32 @@ console.log("value of myvar1", myvar1); // value of myvar1 value1
 console.log("value of myvar2", myvar2); // value of myvar2 value2
 console.log(myNewArray);  // (2) ['value3', 'value4']
 ```
+### passing array to function
+```javascript
+function findTarget(array, target){
+    for(let i = 0; i<array.length; i++){
+        if(array[i]===target){
+            return i;
+        }
+    }
+    return -1;
+}
+const myArray = [1,3,8,90]
+const ans = findTarget(myArray, 8);
+console.log(ans); // 2
+```
+
+### rest parameters 
+```javascript
+function findTarget(array, target){
+    for(let i = 0; i<array.length; i++){
+        if(array[i]===target){
+            return i;
+        }
+    }
+    return -1;
+}
+const myArray = [1,3,8,90]
+const ans = findTarget(myArray, 8);
+console.log(ans); // 2
+```
