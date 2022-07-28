@@ -2,7 +2,7 @@
 * In this module we will cover some basic topics of javascript.
 
 
-# Variables:
+## Variables:
 * In the javascript we are using three keyword for declare variable var, let, const.
 * var & let used
 * for constant const used
@@ -28,7 +28,7 @@ console.log(firstName);
 const pi  = 3.14; // cant update
 ```
 
-# Data types
+## Data types
 ### 7 primitive datatypes
 * null
 * undefined
@@ -92,8 +92,6 @@ typeof alert // "function"  (3)
 * The result of typeof null is "object". That’s an officially recognized error in typeof,null is not an object. It is a special value with a separate type of its own
 * The result of typeof alert is "function", because alert is a function.
 
-
-
 ## alert, prompt, confirm:
 ### alert
 * It shows a message and waits for the user to press “OK”.
@@ -122,9 +120,56 @@ let isBoss = confirm("Are you the boss?");
 
 alert( isBoss ); // true if OK is pressed
 ```
+## Control Flow:
+```javascript
+let weight = 70; // kg
+let height = 1.72; // meter
+
+// calculate the body mass index (BMI)
+let bmi = weight / (height * height);
+
+let weightStatus;
+
+if (bmi < 18.5) {
+  weightStatus = 'Underweight';
+} else if (bmi >= 18.5 && bmi <= 24.9) {
+  weightStatus = 'Healthy Weight';
+} else if (bmi >= 25 && bmi <= 29.9) {
+  weightStatus = 'Overweight';
+} else {
+  weightStatus = 'Obesity';
+}
+
+console.log(weightStatus); // Healthy Weight
+```
+## Ternary Operator
+```javascript
+let age = 18;
+let message;
+
+message = age >= 16 ? 'You can drive.' : 'You cannot drive.';
+
+console.log(message); // You can drive
+```
+## while loop
+```javascript
+let count = 1;
+while (count < 10) {
+    console.log(count);
+    count +=2;
+}
+```
+## do while loop
+```javascript
+let count = 0;
+do {
+  console.log(count);
+  count++;
+} while (count < 5)
+```
 # Function:
 * Functions are the main “building blocks” of the program. They allow the code to be called many times without repetition
-### Function Declaration
+## Function Declaration
 * To create a function we can use a function declaration.
 ```javascript
 function functionName(parameters) {
@@ -137,7 +182,7 @@ function showMessage(message) {
     console.log("hi",message);
 }
 ```
-### Calling a function
+## Calling a function
 * To use a function, you need to call it. Calling a function is also known as invoking a function
 ```javascript
 // function declaration
@@ -170,7 +215,7 @@ function showMessage(message = "Buddy") {
 showMessage("vivek"); // hi vivek What's up!..
 showMessage(); // hi Buddy What's up!..
 ```
-### Returning a value
+## Returning a value
 * Every function in JavaScript implicitly returns undefined unless you explicitly specify a return value
 ```javascript
 function showMessage(message) {
@@ -207,7 +252,7 @@ if ( checkAge(age) ) {
   alert( 'Access denied' );
 }
 ```
-### Naming a function
+## Naming a function
 * Functions name are declare as it show what it does
 * Function starting with…
 * "get…" – return a value,
@@ -215,7 +260,7 @@ if ( checkAge(age) ) {
 * "create…" – create something,
 * "check…" – check something and return a boolean, etc.
 
-### Function expressions
+## Function expressions
 * There is another syntax for creating a function that is called a Function Expression.
 ```javascript
 let showMessage = function(message) {
@@ -250,7 +295,7 @@ let func = sayHi;    // (2) copy
 func(); // Hello     // (3) run the copy (it works)!
 sayHi(); // Hello    //     this still works too (why wouldn't it)
 ```
-### Callback functions
+## Callback functions
 ``` javascript
 function ask(question, yes, no) {
   if (confirm(question)) yes()
@@ -270,7 +315,7 @@ ask("Do you agree?", showOk, showCancel);
 ```
 * The arguments showOk and showCancel of ask are called callback functions or just callbacks.
 
-### Arrow functions
+## Arrow functions
 ``` javascript
 let func = (arg1, arg2, ..., argN) => expression;
 ```
@@ -310,7 +355,7 @@ let welcome = (age < 18) ?
 
 welcome();
 ```
-### Multiline arrow functions
+## Multiline arrow functions
 * The arrow functions that we’ve seen so far were very simple. They took arguments from the left of =>, evaluated and returned the right-side expression with them.
 * Sometimes we need a more complex function, with multiple expressions and statements. 
 * we can enclose them in curly braces. The major difference is that curly braces require a return within them to return a value
@@ -322,7 +367,7 @@ let sum = (a, b) => {  // the curly brace opens a multiline function
 
 alert( sum(1, 2) ); // 3
 ```
-### function inside function:
+## function inside function:
 ```javascript
 function app(){
     const myFunc = () =>{
