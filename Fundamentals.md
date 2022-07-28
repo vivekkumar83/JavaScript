@@ -92,6 +92,36 @@ typeof alert // "function"  (3)
 * The result of typeof null is "object". That’s an officially recognized error in typeof,null is not an object. It is a special value with a separate type of its own
 * The result of typeof alert is "function", because alert is a function.
 
+### passing array to function
+```javascript
+function findTarget(array, target){
+    for(let i = 0; i<array.length; i++){
+        if(array[i]===target){
+            return i;
+        }
+    }
+    return -1;
+}
+const myArray = [1,3,8,90]
+const ans = findTarget(myArray, 8);
+console.log(ans); // 2
+```
+
+### rest parameters 
+```javascript
+function findTarget(array, target){
+    for(let i = 0; i<array.length; i++){
+        if(array[i]===target){
+            return i;
+        }
+    }
+    return -1;
+}
+const myArray = [1,3,8,90]
+const ans = findTarget(myArray, 8);
+console.log(ans); // 2
+```
+
 ## alert, prompt, confirm:
 ### alert
 * It shows a message and waits for the user to press “OK”.
