@@ -372,3 +372,74 @@ const deletedItem = myArray.splice(1, 2, "inserted item1", "inserted item2")
 console.log("delted item", deletedItem); // delted item (2) ['item2', 'item3']
 console.log(myArray);  // (3) ['item1', 'inserted item1', 'inserted item2']
 ```
+### Map:
+* it is used to transform the array
+* it returns a new array
+```javascript
+const arr = [1,2,3,4,5];
+
+function binary(x) {
+    return x.toString(2)
+}
+
+const output = arr.map(binary);
+
+console.log(output); // (5) ['1', '10', '11', '100', '101']
+```
+
+```javascript
+const arr = [1,2,3,4,5];
+
+
+const output = arr.map(function binary(x) {
+    return x.toString(2)
+});
+
+console.log(output); // (5) ['1', '10', '11', '100', '101']
+```
+
+
+```javascript
+const arr = [1,2,3,4,5];
+
+
+const output = arr.map((x) =>x.toString(2));
+
+console.log(output); // (5) ['1', '10', '11', '100', '101']
+```
+### Filter 
+```javascript
+const arr = [1,2,3,4,5];
+
+
+const output = arr.filter((x) => x >2);
+
+console.log(output); // (3) [3, 4, 5]
+```
+### Reduce
+* used at a place where you have to take all the element of the array & comeup with the single value out of them
+* takes two argument
+```javascript
+const arr = [1,2,3,4,5];
+
+
+const output = arr.reduce(function (acc,curr) {
+    acc =acc + curr;
+    return acc;
+}, 0);
+
+console.log(output); // 15
+```
+### chaining map filter
+```javascript
+const users = [
+    {firstName : "vivek", LastName : "kumar", age : 25},
+    {firstName : "gudiya", LastName : "kumari", age : 20},
+    {firstName : "rachna", LastName : "kumari", age : 20},
+    {firstName : "rashmka", LastName : "mandana", age : 29},
+]
+
+const output = users.filter((x) => x.age <25).map((x) => x.firstName);
+
+console.log(output); // (2) ['gudiya', 'rachna']
+```
