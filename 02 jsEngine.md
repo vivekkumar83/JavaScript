@@ -41,6 +41,74 @@ console.log(square4);    // 16
 * If you allocate memory inside of a function, JavaScript will automatically remove it from the memory heap when the function is done being called. 
 * JavaScript completes garbage collection with a mark and sweep method.
 
+## JavaScript run time enviroment:
+* JavaScript is a single threaded synchronous language.
+* one thing can be executed at a time in a specific order
+* Each browser has its own version of JavaScript Runtime with a set of Web API's, methods that developers can access from the window object
+* In a synchronous language, only one thing can be done at a time
+* Imagine an alert on the page, blocking the user from accessing any part of the page until the OK button is clicked
+* If everything in JavaScript that took a significant amount of time, blocked the browser, then we would have a pretty bad user experience
+* This is where concurrency and the event loop come in.
+* the event loop is constantly checking the call stack to see if it is empty so that it can add anything in the callback queue back into the call stack  
+```javascript
+console.log("1");
+// goes on call stack and runs 1
+setTimeout(() => {
+  console.log("2"), 1000;
+});
+// gets sent to web api
+// web api waits 1 sec, runs and sends to callback queue
+// the javascript engine keeps going
+console.log("3");
+// goes on call stack and runs 3
+// event loop keeps checking and see call stack is empty
+// event loop sends calback queue into call stack
+// 2 is now ran
+
+// 1
+// 3
+// 2
+
+// Example with 0 second timeout
+
+console.log("1");
+setTimeout(() => {
+  console.log("2"), 0;
+});
+console.log("3");
+
+// 1
+// 3
+// 2
+
+// Still has the same output
+```
+* The job queue or microtask queue came about with promises in ES6
+* With promises we needed another callback queue that would give higher priority to promise calls
+* The JavaScript engine is going to check the job queue before the callback queue.
+```javascript
+// 1 Callback Queue ~ Task Queue
+setTimeout(() => {
+  console.log("1", "is the loneliest number");
+}, 0);
+setTimeout(() => {
+  console.log("2", "can be as bad as one");
+}, 10);
+
+// 2 Job Queue ~ Microtask Queue
+Promise.resolve("hi").then(data => console.log("2", data));
+
+// 3
+console.log("3", "is a crowd");
+
+// 3 is a crowd
+// 2 hi
+// undefined Promise resolved
+// 1 is the loneliest number
+// 2 can be as bad as one
+```
+![jsengine](https://github.com/vivekkumar83/JavaScript/blob/main/javascript%20runtime.jpeg)
+
 ## Hoisting:
 * Hoisting is a phenomenona in javascript, by which we can access the variable & function even before we initialized it
 ``` javascript
