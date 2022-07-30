@@ -1,7 +1,3 @@
-# JavaScript Fundamentals:
-* In this module we will cover some basic topics of javascript.
-
-
 ## Variables:
 * In the javascript we are using three keyword for declare variable var, let, const.
 * var & let used
@@ -30,6 +26,11 @@ const pi  = 3.14; // cant update
 
 ## Data types
 ### 7 primitive datatypes
+* primitive type that has only one value
+* immutable
+* The variable assigned to a primitive type may be reassigned to a new value, but the original value can not be changed
+* Primitives are passed by value
+#### types
 * null
 * undefined
 * boolean
@@ -37,8 +38,17 @@ const pi  = 3.14; // cant update
 * string
 * symbol 
 * bigint 
-### and a complex data type
-* Object
+### complex data type
+* Objects are able to be mutated and their properties are passed by reference
+* Booleans can be objects (if defined with the new keyword)
+* Numbers can be objects (if defined with the new keyword)
+* Strings can be objects (if defined with the new keyword)
+* Dates are always objects
+* Maths are always objects
+* Regular expressions are always objects
+* Arrays are always objects
+* Functions are always objects
+* Objects are always objects
 
 ### Null
 * there is an absence of value
