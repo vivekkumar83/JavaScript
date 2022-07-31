@@ -328,3 +328,44 @@ let person = {
 
 console.log(person.getFullName()); // // Hello, World!
 ```
+### Constructor Function
+* JavaScript constructor function is a regular function used to create multiple similar objects
+```javascript
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+let person = new Person('John','Doe');
+```
+* the new operator does the following
+* Create a new empty object and assign it to the this variable.
+* Assign the arguments 'John' and 'Doe' to the firstName and lastName properties of the object.
+* Return the this value.
+* It’s functionally equivalent to the following
+```javascript
+function Person(firstName, lastName) {
+    // this = {};
+
+    // add properties to this
+    this.firstName = firstName;
+    this.lastName = lastName;
+
+    // return this;
+}
+```
+* To add a method to an object created via the constructor function, you can use the this keyword
+```javascript
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+
+    this.getFullName = function () {
+        return this.firstName + " " + this.lastName;
+    };
+}
+
+let person = new Person("John", "Doe");
+console.log(person.getFullName()); // John Doe
+}
+```
