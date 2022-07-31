@@ -290,3 +290,41 @@ console.log(user1firstName); // harshit
 console.log(userId);         // 1
 console.log(user3gender);    // female
 ```
+### Object Methods
+* When the value is a function, the property becomes a method
+```javascript
+let person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    greet: function () {
+        console.log('Hello, World!');
+    }
+};
+```
+```javascript
+let person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    greet() {
+        console.log('Hello, World!');
+    }
+};
+
+person.greet(); // Hello, World!
+```
+* the this value references the object that invokes the method.
+```javascript
+let person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    greet: function () {
+        console.log('Hello, World!');
+    },
+    getFullName: function () {
+        return this.firstName + ' ' + this.lastName;
+    }
+};
+
+
+console.log(person.getFullName()); // // Hello, World!
+```
