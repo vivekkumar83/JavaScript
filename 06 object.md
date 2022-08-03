@@ -369,3 +369,7 @@ let person = new Person("John", "Doe");
 console.log(person.getFullName()); // John Doe
 }
 ```
+* The problem with the constructor function is that when you create multiple instances of the Person, the this.getFullName() is duplicated in every instance, which is   not memory efficient.
+
+* To resolve this, you can use the prototype so that all instances of a custom type can share the same methods.
+
